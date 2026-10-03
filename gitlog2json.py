@@ -87,6 +87,9 @@ def main():
             # (including alternate aliases, emails)
             if m in aliases:
                 uid = aliases[m]
+            # accidental historical commit
+            elif m == 'larry@gentoo.org':
+                continue
             # devs not in LDAP?
             elif m.endswith('@gentoo.org') and not vals.ldap_only:
                 uid = m[:-len('@gentoo.org')]
